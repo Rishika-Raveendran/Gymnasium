@@ -1,0 +1,35 @@
+.sidebar{
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+}
+
+.logo{
+    width:100%;
+    justify-content: center;
+    margin-top:-20px;
+    margin-bottom: 40px;
+}
+
+.option{
+    font-size: 1.2rem;
+    margin-top: 8vh;
+    color: #14FFEC;
+    
+}
+.topnav{
+    background-color: #212121;
+
+}
+.activeNav{
+    border-right: #14FFEC 5px solid;
+   
+}
+
+@media screen and (max-width:768px){
+    .sidebar{
+        display: none;
+    }
+}

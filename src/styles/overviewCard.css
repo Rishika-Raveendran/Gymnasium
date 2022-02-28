@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .grandparent{
+      height:23vh;
+  }
+  .parent{
+
+    box-shadow: #0D7377 1px 2px 5px
+  }
+  .parent{
+      background-color: #F9F9F9;
+      height:20vh;
+  }
+  .card{
+      display: flex;
+      align-items: center;
+      color: #323232;
+  }
+  .card h2{
+font-size:5rem;
+font-weight: 800;
+margin-left:4vw;
+
+  }
+
+  .card p{
+margin-left:2vw;
+font-size: 2rem;
+font-weight: 100;
+
+  }
+
+  @media screen and (max-width:768px) {
+      .grandparent{
+      height:45vh;
+
+      }
+      .parent{
+      height:40vh;
+
+      }
+    .card{
+        display: block;
+    } 
+    .card h2{
+        text-align: center;
+        font-size:5rem;
+        font-weight: 800;
+        margin-left: 0px;
+    }
+    .card p{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+  }
+
