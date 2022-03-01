@@ -4,6 +4,7 @@ import OverviewCards from "../components/overviewCards"
 import "../styles/global.css"
 import Axios from "axios"
 import baseUrl from "../components/baseUrl"
+import generatePDF from "../components/generatePDF.JS"
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
               <button
                 className="modalButton uppercase text-white active:bg-green-600  rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
+                onClick={()=>{
+                  generatePDF([{users:users,trainers:trainers,guards:guards,managers:managers}], "OverallCount", "Overview Report","count");
+                }}
               >
                 export
               </button>

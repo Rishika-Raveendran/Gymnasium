@@ -4,6 +4,9 @@ import "../styles/customerPage.css"
 import Axios from "axios"
 import baseUrl from "../components/baseUrl"
 import CustomerCard from "../components/customerCard"
+import { FaArrowCircleDown } from "react-icons/fa"
+import generatePDF from "../components/generatePDF.js"
+
 
 function Customers() {
   const [customers, setCustomers] = useState([])
@@ -24,7 +27,7 @@ function Customers() {
           <div className="grid grid-cols-12">
             <div className="col-span-9 col-start-1">
               {" "}
-              <h2 className="p-6">CUSTOMERS</h2>
+              <h2 className="p-6 flex">CUSTOMERS<button className="ml-4 p-2" onClick={()=> generatePDF(customers,"Customers", "Customer List","general") }><FaArrowCircleDown/></button></h2>
             </div>
           </div>
         </div>

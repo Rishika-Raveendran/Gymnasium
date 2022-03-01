@@ -1,0 +1,13 @@
+.female,.male{
+    border-width: 3px;
+    padding: 6px;
+    border-radius: 10px;
+}
+.female{
+    color: rgb(3, 3, 158);
+    border: rgb(3, 3, 158) solid;
+}
+.male{
+    color: black;
+    border: black solid;
+}

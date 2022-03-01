@@ -1,0 +1,13 @@
+.shift1,.shift2{
+    border-width: 3px;
+    padding: 6px;
+    border-radius: 10px;
+}
+.shift1{
+    color: black;
+    border: black solid;
+}
+.shift2{
+    background-color: black;
+    color: white;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Transition } from "@headlessui/react"
 import { Link } from "gatsby"
 import Logo from "../images/gym.png"
@@ -6,29 +6,42 @@ import "../styles/sidebar.css"
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  let pathname=window.location.pathname;
-  let opClass1="option uppercase",opClass2="option uppercase",opClass3="option uppercase",opClass4="option uppercase",opClass5="option uppercase"
-  console.log(pathname);
-  switch(pathname){
-  case "/":opClass1="option uppercase activeNav";
-  break;
-  case "/customers":opClass2="option uppercase activeNav";
-  break;
-  case "/trainers":opClass3="option uppercase activeNav";
-  break;
-  case "/guards":opClass4="option uppercase activeNav";
-  break;
-  case "/managers":opClass5="option uppercase activeNav";
-  break;
-}
 
+  const [pathname, setPathname] = useState("/")
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [])
+
+  let opClass1 = "option uppercase",
+    opClass2 = "option uppercase",
+    opClass3 = "option uppercase",
+    opClass4 = "option uppercase",
+    opClass5 = "option uppercase"
+
+  switch (pathname) {
+    case "/":
+      opClass1 = "option uppercase activeNav"
+      break
+    case "/customers":
+      opClass2 = "option uppercase activeNav"
+      break
+    case "/trainers":
+      opClass3 = "option uppercase activeNav"
+      break
+    case "/guards":
+      opClass4 = "option uppercase activeNav"
+      break
+    case "/managers":
+      opClass5 = "option uppercase activeNav"
+      break
+  }
 
   return (
     <>
       <div className="sidebar top-0 left-0 w-[20vw] p-10 fixed h-full ease-in-out duration-300 sm:hidden md:block">
         <ul className="navOptions">
           <li className="logo z-50">
-           <img src={Logo} alt="Logo"/>
+            <img src={Logo} alt="Logo" />
           </li>
           <li>
             {" "}
@@ -60,7 +73,6 @@ const Sidebar = () => {
               <div className={opClass5}>managers</div>
             </Link>
           </li>
-         
         </ul>
       </div>
       <nav className="md:hidden topnav fixed top-0 w-full z-10">
@@ -158,13 +170,11 @@ const Sidebar = () => {
                     Logs
                   </button>
                 </Link>
-               
               </div>
             </div>
           )}
         </Transition>
       </nav>
-     
     </>
   )
 }

@@ -4,6 +4,10 @@ import baseUrl from "../components/baseUrl"
 import Layout from "../components/layout"
 import ManagerCard from '../components/managerCard'
 import "../styles/managerPage.css"
+import { FaArrowCircleDown } from "react-icons/fa"
+import generatePDF from "../components/generatePDF"
+
+
 
 function Managers() {
 
@@ -24,7 +28,7 @@ function Managers() {
         <div className="grid grid-cols-12">
           <div className="col-span-9 col-start-1">
             {" "}
-            <h2 className="p-6">MANAGERS</h2>
+            <h2 className="p-6 flex">MANAGERS<button className="ml-4 p-2" onClick={()=> generatePDF(managers,"Managers", "Manager List","general") }><FaArrowCircleDown/></button></h2>
           </div>
         
         </div>
