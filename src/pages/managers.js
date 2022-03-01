@@ -12,7 +12,6 @@ function Managers() {
   useEffect(() => {
     Axios.get(`${baseUrl}/managers`)
       .then(jsonRes => {
-        // console.log(jsonRes.data)
         setManagers(jsonRes.data)
       })
       .catch(err => alert("Error fetching data"))
